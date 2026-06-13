@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="app-container">
+
+    <div class="sidebar">
+
+        <h2>API Sentinel</h2>
+
+        <button class="logout-btn" onclick="logout()">
+    Logout
+</button>
+
+    </div>
+
+    <div class="container">
+        <div class="top-bar">
+
+    <div>
+
+        <h1>AI-Powered API Testing & Security Analysis Platform</h1>
+        <p class="project-description">
+    Automated API testing, security analysis,
+    AI-powered error diagnosis, Swagger import,
+    PDF reporting, and API collection management.
+</p>
+
+    </div>
+
+    <button onclick="toggleTheme()" id="theme-btn">
+        🌙
+    </button>
+
+</div>
+
+<div class="stats">
+
+    <div class="card">
+
+       <h3>Saved Test Notes</h3>
+
+<p id="total-notes">0</p>
+
+    </div>
+
+    <div class="card">
+
+        <h3>API Collections</h3>
+
+<p id="total-categories">0</p>
+
+    </div>
+
+</div>
+        
+<div id="login-section">
+
+    <input
+        type="text"
+        id="username"
+        placeholder="Enter Username"
+    >
+
+    <input
+        type="password"
+        id="password"
+        placeholder="Enter Password"
+    >
+
+    <button onclick="login()">
+        Login
+    </button>
+
+    <button onclick="register()">
+        Register
+    </button>
+
+</div>
+
+        <hr>
+
+
+        <h2>Swagger Import ⭐</h2>
+
+<input
+    type="text"
+    id="swagger-url"
+    placeholder="Enter OpenAPI URL"
+/>
+
+<button onclick="importSwagger()">
+    Import Swagger
+</button>
+
+<div id="swagger-results"></div>
+
+        <h2>API Tester 🚀</h2>
+        <h2>📂 API Collections</h2>
+
+<div id="collections"></div>
+
+<input
+    type="text"
+    id="api-url"
+    placeholder="Enter API URL"
+/>
+
+<select id="api-method">
+
+    <option value="GET">
+        GET
+    </option>
+
+    <option value="POST">
+        POST
+    </option>
+
+</select>
+
+<textarea
+    id="api-body"
+    placeholder="Enter JSON Body"
+></textarea>
+
+<button onclick="testAPI()">
+    Send Request
+</button>
+<button onclick="saveCollection()">
+    💾 Save API
+</button>
+<button onclick="generateTests()">
+    🧪 Generate Test Cases
+</button>
+<button onclick="runAllTests()">
+    🚀 Run All Tests
+</button>
+
+<h3>Generated Test Cases</h3>
+
+<div id="generated-tests">
+
+</div>
+
+<h3>Test Results</h3>
+
+<div id="test-results">
+
+</div>
+<h2>🤖 AI Assistant</h2>
+
+<input
+    type="text"
+    id="ai-question"
+    placeholder="Ask AI..."
+>
+
+<button onclick="askAI()">
+    Ask AI
+</button>
+
+<div id="ai-response"></div>
+
+<pre id="api-response"></pre>
+<h2>API Analysis</h2>
+
+<div id="api-analysis"></div>
+
+<h2>🛡️ Security Score</h2>
+
+<div id="security-score">
+
+    Run tests to calculate security score
+
+</div>
+
+<button onclick="exportPDF()">
+    📄 Export PDF Report
+</button>
+
+<h2>Root Cause Analysis</h2>
+
+<div id="root-cause"></div>
+
+        <h2>📝 Test Notes</h2>
+
+<input type="text" id="title" placeholder="Test Note Title">
+
+<select id="category">
+
+    <option value="Study">Study</option>
+
+    <option value="Work">Work</option>
+
+    <option value="Personal">Personal</option>
+
+    <option value="Ideas">Ideas</option>
+
+</select>
+
+<textarea
+    id="content"
+    placeholder="Write API observations, bugs, or testing notes"
+></textarea>
+
+<button onclick="createNote()">
+    Save Test Note
+</button>
+
+<input
+    type="text"
+    id="search"
+    placeholder="Search notes..."
+    onkeyup="searchNotes()"
+/>
+
+<div id="notes"></div>
+
+    </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
